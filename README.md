@@ -1,2 +1,14 @@
 # m-more
-Prebuilt larger AUR files
+
+Larger packages.
+
+## Overview
+This repo includes certain larger hand picked [AUR](https://aur.archlinux.org/packages) packages.
+
+## How to use this repo?
+Check these [instructions](../../../antergos-common-repo-info/blob/master/README.md)
+
+## Special note
+Any of the packages here may be removed if there are good reasons to do so.
+
+## More info about the packages
