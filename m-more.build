@@ -1,0 +1,27 @@
+#!/bin/bash
+
+Main()
+{
+    local git_reponame="m-more"
+    local assets_dir="$PWD"
+    local path_to_git_dir="$assets_dir/../$git_reponame"   # path must start with '/'
+
+    local PKGNAMES_AUR=(
+        bashdb
+        ccrypt
+        pamac-aur
+        virtualbox-ext-oracle
+    )
+    local PKGBUILDS_OTHER=(
+        $path_to_git_dir/PKGBUILD_local_wcd
+        $path_to_git_dir/PKGBUILD_local_vivaldi
+        $path_to_git_dir/PKGBUILD_local_vivaldi-ffmpeg-codecs
+        $path_to_git_dir/PKGBUILD_local_vivaldi-widevine
+    )
+
+    BuildAurPkgsToDir "$assets_dir" "${PKGNAMES_AUR[@]}" "${PKGBUILDS_OTHER[@]}"
+
+    repo-add-sign -n="$git_reponame" -d="$assets_dir"
+}
+
+Main "$@"
