@@ -2,9 +2,10 @@
 
 Main()
 {
-    local git_reponame="m-more"
-    local assets_dir="$PWD"
-    local path_to_git_dir="$assets_dir/../$git_reponame"   # path must start with '/'
+    local repo="m-more"              # name of the repo
+    local tag="mirror"               # github release tag
+    local assets="$PWD"              # assets folder
+    local git="$assets/../$repo"     # git folder
 
     local PKGNAMES_AUR=(
         bashdb
@@ -13,15 +14,39 @@ Main()
         virtualbox-ext-oracle
     )
     local PKGBUILDS_OTHER=(
-        $path_to_git_dir/PKGBUILD_local_wcd
-        $path_to_git_dir/PKGBUILD_local_vivaldi
-        $path_to_git_dir/PKGBUILD_local_vivaldi-ffmpeg-codecs
-        $path_to_git_dir/PKGBUILD_local_vivaldi-widevine
+        # here relative paths not allowed because of BuildAurPkgsToDir
+        $git/PKGBUILD_local_wcd
     )
 
-    BuildAurPkgsToDir "$assets_dir" "${PKGNAMES_AUR[@]}" "${PKGBUILDS_OTHER[@]}"
+    test -d .git && {}
 
-    repo-add-sign -n="$git_reponame" -d="$assets_dir"
+    # remove database and all signatures
+    rm -f $repo.{db,files} $repo.{db,files}.* *.sig
+
+    # build assets
+    BuildAurPkgsToDir "$assets" "${PKGBUILDS_OTHER[@]}" "${PKGNAMES_AUR[@]}"
+
+    # sign assets
+    repo-add-sign -n="$repo" -d="$assets"
+
+    # now the files are ready to be transferred to a repo
+
+    local answer
+    read -p "Transfer assets to github (Y/n)? " answer
+    answer="$(echo "$answer" | tr [:upper:] [:lower:])"
+    case "${answer::1}" in
+        ""|y) ;;
+        *) return ;;
+    esac
+
+    # temporarily fake this (assets) dir is a git dir
+    ln -s $git/.git
+
+    # put release assets to github
+    add-release-assets $tag $(ls -1 [a-z]*)
+
+    # git dir faking no more needed
+    rm -rf .git
 }
 
 Main "$@"
