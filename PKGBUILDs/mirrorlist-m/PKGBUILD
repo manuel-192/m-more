@@ -1,0 +1,27 @@
+#!/bin/bash
+
+pkgname=mirrorlist-m
+pkgdesc="/etc/pacman.d/mirrorlist-m for certain packages at github."
+
+pkgver=1.0
+pkgrel=4
+arch=(any)
+license=(GPL)
+depends=(pacman)
+#backup=(etc/pacman.d/$pkgname)
+
+prepare() {
+    cat <<EOF > $pkgname
+### Personal mirror list ###
+
+
+# github
+Server = https://github.com/manuel-192/\$repo/releases/download/\$arch
+EOF
+}
+
+package() {
+    cd $srcdir
+
+    install -Dm644 $pkgname    $pkgdir/etc/pacman.d/$pkgname
+}
