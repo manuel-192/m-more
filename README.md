@@ -5,7 +5,7 @@ This repo includes certain hand picked [AUR](https://aur.archlinux.org/packages)
 and the latest available versions of certain other packages.
 
 ## How to use this repo?
-Check these [instructions](../../../antergos-common-repo-info/blob/master/README.md)<br>
+Check these [instructions](../../../m-repo-info/blob/master/README.md)<br>
 Note that the <b>Releases</b> button above shows the packages.
 
 ### Using a mirrorlist for this repo
