@@ -1,4 +1,4 @@
-# m-more
+# [m-more]
 
 ## Overview
 This repo includes certain hand picked [AUR](https://aur.archlinux.org/packages) packages
