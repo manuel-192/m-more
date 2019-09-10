@@ -6,7 +6,7 @@ and the latest available versions of certain other packages.
 
 ## How to use this repo?
 Check these [instructions](../../../m-repo-info/blob/master/README.md)<br>
-Note that the [<b>Releases</b>](../../../m-more/releases) button above shows the packages.
+[<b>Packages</b>](../../../m-more/releases) (same as the <b>Releases</b> button above).
 
 ### Using a mirrorlist for this repo
 Repo **m-more** includes a package named **mirrorlist-m** that can create a mirrorlist for m-more packages.
