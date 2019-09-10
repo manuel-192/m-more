@@ -1,8 +1,10 @@
 # [m-more]
 
 ## Overview
-This repo includes certain hand picked [AUR](https://aur.archlinux.org/packages) packages
-and the latest available versions of certain other packages.
+This repo includes 
+- certain hand picked [AUR](https://aur.archlinux.org/packages) packages
+- other packages (like <b>wcd</b>)
+- a mirrorlist package for Manuel's repositories
 
 ## How to use this repo?
 Check these [instructions](../../../m-repo-info/blob/master/README.md)<br>
