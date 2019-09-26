@@ -1,0 +1,20 @@
+#!/bin/bash
+
+pkgname=code-fix
+pkgdesc="Fix bash completion file for 'code'."
+
+url="https://github.com/manuel-192/m-m/raw/master/PKGBUILDs/$pkgname"
+
+pkgver=1.0
+pkgrel=1
+arch=(any)
+license=(GPL)
+optdepends=(bash-completion)
+
+source=($url/$pkgname.hook)
+sha512sums=('3e796f4731148d7493e5aeba7525b101ff0860a284fd04c5b9298c5577884e69e3239cf8a60847913c90d280f3fd01c638fef190476a77abf99f910ea0b0a7ea')
+
+package() {
+    install -d $pkgdir/etc/pacman.d/hooks
+    install -Dm644 $pkgname.hook    $pkgdir/etc/pacman.d/hooks/$pkgname.hook
+}
