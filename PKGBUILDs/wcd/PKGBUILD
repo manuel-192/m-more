@@ -10,9 +10,8 @@ url="https://sourceforge.net/projects/$pkgname"
 license=('GPL')
 depends=('gcc' 'make' 'po4a')
 source=("$url/files/$pkgname/${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=(
-   b48a6f8a196725b4b570701813cf8a96e13e4fd6289b6c779218acc20ea1ea841e5f8648f717bb389976b715b95856e91bad3ffb20f8d80961d75eae8eacfbe8
-)
+sha512sums=('b48a6f8a196725b4b570701813cf8a96e13e4fd6289b6c779218acc20ea1ea841e5f8648f717bb389976b715b95856e91bad3ffb20f8d80961d75eae8eacfbe8')
+install=wcd.install
 
 _local_version_check()
 {
