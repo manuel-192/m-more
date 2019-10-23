@@ -8,10 +8,14 @@ This repo includes
   - opera-beta
   - opera-developer
   - pamac-aur-git
+  - samsung-unified-driver-common
   - virtualbox-ext-oracle
   - xfe
-- other packages (like <b>wcd</b>)
+- other packages
+  - code-fix (fixes a bash completion issue for **code**)
+  - wcd      (a graphical "cd" command)
 - a mirrorlist package for all Manuel's repositories
+  - mirrolist-m
 
 ## How to use this repo?
 Check these [instructions](../../../m-repo-info/blob/master/README.md)<br>
