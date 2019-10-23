@@ -2,7 +2,14 @@
 
 ## Overview
 This repo includes 
-- certain hand picked [AUR](https://aur.archlinux.org/packages) packages
+- certain hand picked [AUR](https://aur.archlinux.org/packages) packages like
+  - bashdb
+  - ccrypt
+  - opera-beta
+  - opera-developer
+  - pamac-aur-git
+  - virtualbox-ext-oracle
+  - xfe
 - other packages (like <b>wcd</b>)
 - a mirrorlist package for all Manuel's repositories
 
