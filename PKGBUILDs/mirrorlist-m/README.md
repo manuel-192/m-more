@@ -12,3 +12,8 @@ Include = /etc/pacman.d/mirrorlist-m
 [m-more]
 Include = /etc/pacman.d/mirrorlist-m
 </pre>
+Note: there's a small script *install-mirrorlist* that adds Manuel's repositories to your system. You may use it with these commands:
+<pre>
+wget -q https://github.com/manuel-192/m-more/raw/master/PKGBUILDs/mirrorlist-m/install-mirrorlist
+bash install-mirrorlist
+</pre>
