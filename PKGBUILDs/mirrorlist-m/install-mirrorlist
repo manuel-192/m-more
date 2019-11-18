@@ -9,7 +9,7 @@ DIE() {
 
 Sha512() {
     source PKGBUILD
-    echo "${sha512sums[1]}  $tmpfile" | sha512sum -c >/dev/null || DIE "checksum failed."
+    echo "${sha512sums[0]}  $pkgname" | sha512sum -c >/dev/null || DIE "checksum failed."
     echo "OK"
 }
 
@@ -22,18 +22,16 @@ Main()
     local key=A1F1B5187D25904B
     local repo repos=(m-m m-more)
     local tmpdir=$(mktemp -d)
-    local tmpfile=""
     local sha512
 
     # command to create /etc/pacman.d/mirrorlist-m
     if [ -r $list ] ; then
         pushd $tmpdir >/dev/null
-        tmpfile=ml
-        wget -q -O $tmpfile $url/mirrorlist-m || DIE "fetching mirrorlist failed."
-        wget -q -O PKGBUILD $url/PKGBUILD     || DIE "fetching PKGBUILD failed."
-        test "$(Sha512)" = "OK"               || DIE "mirrorlist checksum failed."
+        wget -q -O mirrorlist-m $url/mirrorlist-m || DIE "fetching mirrorlist failed."
+        wget -q -O PKGBUILD     $url/PKGBUILD     || DIE "fetching PKGBUILD failed."
+        test "$(Sha512)" = "OK"                   || DIE "mirrorlist checksum failed."
         popd >/dev/null
-        cmds+=("; cp $tmpdir/$tmpfile $list")
+        cmds+=("; cp $tmpdir/mirrorlist-m $list")
     fi
 
     # adds Manuel's repos to /etc/pacman.conf
