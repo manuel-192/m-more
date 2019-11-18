@@ -25,7 +25,7 @@ Main()
     local sha512
 
     # command to create /etc/pacman.d/mirrorlist-m
-    if [ -r $list ] ; then
+    if [ ! -r $list ] ; then
         pushd $tmpdir >/dev/null
         wget -q -O mirrorlist-m $url/mirrorlist-m || DIE "fetching mirrorlist failed."
         wget -q -O PKGBUILD     $url/PKGBUILD     || DIE "fetching PKGBUILD failed."
