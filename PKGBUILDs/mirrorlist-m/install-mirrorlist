@@ -15,7 +15,7 @@ Sha512() {
 
 Main()
 {
-    local url=https://github.com/manuel-192/m-m/raw/master/PKGBUILDs
+    local url=https://github.com/manuel-192/m-more/raw/master/PKGBUILDs/mirrorlist-m
     local list=/etc/pacman.d/mirrorlist-m
     local conf=/etc/pacman.conf
     local cmds=(":")           # does nothing!
