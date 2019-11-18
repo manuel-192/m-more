@@ -1,24 +1,19 @@
 #!/bin/bash
 
 pkgname=mirrorlist-m
-pkgdesc="/etc/pacman.d/mirrorlist-m for certain packages at github."
-
+pkgdesc="A mirror list for Manuel's packages at github."
+url="https://github.com/manuel-192/m-m/raw/master/PKGBUILDs/$pkgname"
 pkgver=1.0
-pkgrel=5
+pkgrel=6
 arch=(any)
 license=(GPL)
 depends=(pacman)
-#backup=(etc/pacman.d/$pkgname)
-
-prepare() {
-    cat <<EOF > $pkgname
-### Personal mirror list ###
-
-
-# github
-Server = https://github.com/manuel-192/\$repo/releases/download/\$arch
-EOF
-}
+source=(
+    $pkgname
+    install-mirrorlist
+)
+sha512sums=('8d28fb6beeabe4c1cf42035f76740cd21985cc992103702f95ed89d7be7e378e361ef267582feb28b571153708997e0e3056142f66c1892eed135affc14c85d6'
+            '1851564a64426ae84bab773618e1934f561180e6c0bc96b6d5dea2d7b8ba8bd0e234f1d150dcdf1a2c2270d96ca6beb97d5260033a0e484a0f570216b5decc41')
 
 package() {
     cd $srcdir
