@@ -12,8 +12,9 @@ This repo includes
   - virtualbox-ext-oracle
   - xfe
 - other packages
-  - code-fix (fixes a bash completion issue for **code**)
-  - wcd      (a graphical "cd" command)
+  - code-fix     (fixes a bash completion issue for **code**)
+  - gnome-hearts (a card game, rescued version only with no new features)
+  - wcd          (a graphical "cd" command)
 - a mirrorlist package for all Manuel's repositories
   - mirrolist-m
 
