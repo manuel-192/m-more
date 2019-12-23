@@ -1,14 +1,15 @@
 #!/bin/bash
 
 pkgname=gnome-hearts
-pkgdesc="Gnome Hearts game saved."
+pkgdesc="Gnome Hearts card game rescued."
 
 url="https://github.com/manuel-192/m-m/raw/master/PKGBUILDs/$pkgname"
 
 pkgver=1
-pkgrel=1
+pkgrel=2
 arch=(any)
 license=(GPL)
+depends=(gtk-engine-murrine)  # Is this gtk2 stuff really needed?
 
 source=($url/$pkgname.zip)
 sha512sums=('30dcdf5d03339b4998123b87e43b6fb8d934b2316a5f023b619492b712315b3f0b1e0e15b93197df46554229e13b83ef55cedc4e4efb0a7a1c44c4e933172ce9')
