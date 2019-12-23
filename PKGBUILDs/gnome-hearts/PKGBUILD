@@ -5,14 +5,14 @@ pkgdesc="Gnome Hearts card game rescued."
 
 url="https://github.com/manuel-192/m-m/raw/master/PKGBUILDs/$pkgname"
 
-pkgver=1
-pkgrel=2
+pkgver=1.1
+pkgrel=1
 arch=(any)
 license=(GPL)
 depends=(gtk-engine-murrine)  # Is this gtk2 stuff really needed?
 
-source=($url/$pkgname.zip)
-sha512sums=('30dcdf5d03339b4998123b87e43b6fb8d934b2316a5f023b619492b712315b3f0b1e0e15b93197df46554229e13b83ef55cedc4e4efb0a7a1c44c4e933172ce9')
+source=($url/$pkgname.zstd)
+sha512sums=('675768b039e2e68c824477b25b8f5d2357cc772a37297f46f350dea6cc825481d1801d36fdcb96114811f320151dc19171cf9371624017a1af26c56d081c0f5c')
 
 package() {
     local xx
