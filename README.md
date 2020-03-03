@@ -2,7 +2,7 @@
 
 ## Overview
 This repo includes 
-- certain hand picked [AUR](https://aur.archlinux.org/packages) packages like
+- certain hand picked and pre-built [AUR](https://aur.archlinux.org/packages) packages like
   - bashdb
   - ccrypt
   - opera-beta
