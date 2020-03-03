@@ -7,6 +7,7 @@ This repo includes
   - ccrypt
   - opera-beta
   - opera-developer
+  - pamac-aur
   - pamac-aur-git
   - samsung-unified-driver-common
   - virtualbox-ext-oracle
