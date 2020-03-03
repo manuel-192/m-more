@@ -2,6 +2,8 @@
 
 ## Overview
 This repo includes 
+- a mirrorlist package for all Manuel's repositories
+  - mirrolist-m
 - certain hand picked and pre-built [AUR](https://aur.archlinux.org/packages) packages like
   - bashdb
   - ccrypt
@@ -16,8 +18,6 @@ This repo includes
   - code-fix     (fixes a bash completion issue for **code**)
   - gnome-hearts (a card game, rescued version only with no new features)
   - wcd          (a graphical "cd" command)
-- a mirrorlist package for all Manuel's repositories
-  - mirrolist-m
 
 ## How to use this repo?
 Check these [instructions](../../../m-repo-info/blob/master/README.md)<br>
