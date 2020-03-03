@@ -10,8 +10,10 @@ license=(GPL)
 depends=(pacman)
 source=(
     $pkgname
+    install-mirrorlist
 )
-sha512sums=('2a2913b7aa1ba8aeacc9b1d2aaeb30f52610c8ac91969978e17ffff48d4ba0d5f6eb0e640ceb69ca4891652f6f5596f7f9fb89b35733375122e167dcdf923cb0')
+sha512sums=('2a2913b7aa1ba8aeacc9b1d2aaeb30f52610c8ac91969978e17ffff48d4ba0d5f6eb0e640ceb69ca4891652f6f5596f7f9fb89b35733375122e167dcdf923cb0'
+            'b0008e9b5e778eb75948dcbcb281399cac7859b55e7a75e47c9cabf020c8274af0e0a2a0d7b5f74292c0876b179da0350852bc751c0575e9f20e09af42b29bff')
 
 # Currently no need for the 'backup' variable. Simply override $pkgname file.
 # backup=(etc/pacman.d/mirrorlist-m)
