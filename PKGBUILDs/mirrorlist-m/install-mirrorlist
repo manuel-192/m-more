@@ -15,8 +15,9 @@ Sha512() {
 
 Main()
 {
-    local url=https://github.com/manuel-192/m-more/raw/master/PKGBUILDs/mirrorlist-m
-    local list=/etc/pacman.d/mirrorlist-m
+    local Pkgname=mirrorlist-m
+    local url=https://github.com/manuel-192/m-more/raw/master/PKGBUILDs/$Pkgname
+    local list=/etc/pacman.d/$Pkgname
     local conf=/etc/pacman.conf
     local cmds=(":")           # does nothing!
     local key=A1F1B5187D25904B
@@ -24,14 +25,14 @@ Main()
     local tmpdir=$(mktemp -d)
     local sha512
 
-    # command to create /etc/pacman.d/mirrorlist-m
+    # command to create /etc/pacman.d/$Pkgname
     if [ ! -r $list ] ; then
         pushd $tmpdir >/dev/null
-        wget -q -O mirrorlist-m $url/mirrorlist-m || DIE "fetching mirrorlist failed."
-        wget -q -O PKGBUILD     $url/PKGBUILD     || DIE "fetching PKGBUILD failed."
-        test "$(Sha512)" = "OK"                   || DIE "mirrorlist checksum failed."
+        wget -q -O $Pkgname $url/$Pkgname  || DIE "fetching $Pkgname failed."
+        wget -q -O PKGBUILD $url/PKGBUILD  || DIE "fetching PKGBUILD failed."
+        test "$(Sha512)" = "OK"            || DIE "$Pkgname checksum failed."
         popd >/dev/null
-        cmds+=("; cp $tmpdir/mirrorlist-m $list")
+        cmds+=("; cp $tmpdir/$Pkgname $list")
     fi
 
     # adds Manuel's repos to /etc/pacman.conf
