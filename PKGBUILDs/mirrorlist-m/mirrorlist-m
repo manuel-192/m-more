@@ -1,6 +1,7 @@
 ### Manuel's mirror list ###
 
-Server = https://github.com/manuel-192/$repo/raw/master/repo
 
-# This is now deprecated:
-# Server = https://github.com/manuel-192/$repo/releases/download/$arch
+Server = https://github.com/manuel-192/$repo/releases/download/$arch
+
+# Note: the following mirror address is deprecated and may be removed later
+Server = https://github.com/manuel-192/$repo/raw/master/repo
