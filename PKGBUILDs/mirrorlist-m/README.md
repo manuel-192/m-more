@@ -8,9 +8,11 @@ You may add a references to this file in the end of your /etc/pacman.conf, e.g.:
 <pre>
 [m-m]
 Include = /etc/pacman.d/mirrorlist-m
+SigLevel = Required
 
 [m-more]
 Include = /etc/pacman.d/mirrorlist-m
+SigLevel = Required
 </pre>
 Note: there's a small script *install-mirrorlist* that adds Manuel's repositories to your system. You may use it with these commands:
 <pre>
