@@ -3,7 +3,7 @@
 pkgname=mirrorlist-m
 pkgdesc="A mirror list for Manuel's packages at github."
 url="https://github.com/manuel-192/m-m/raw/master/PKGBUILDs/$pkgname"
-pkgver=2.1
+pkgver=3
 pkgrel=1
 arch=(any)
 license=(GPL)
@@ -12,7 +12,7 @@ source=(
     $pkgname
     install-mirrorlist
 )
-sha512sums=('bc27b0097439942fce6bf29cbdd55ca462dcb1c645a0679e774e17e26a914f97cb3cbd8c7c752010a2b4ca9404c248dc5bae00cabca3ecec0fb5011e25baf031'
+sha512sums=('ba49181570af902b2b0d76b348d6d747a9b13314772a6df8b0922413ddbc2d142c0c9c5ea2f7826e0d72eb94ec532e52dfcf2757abfa1612f0fd18148f821199'
             'ae4b62fea733ddab543170aaf43de351f9dfffcd065df90949d15e4aa4ee12139cc30d10d5a6b5698330466168e55613f516341f6e0cdb8345fe9ab7732c2ee3')
 
 # Currently no need for the 'backup' variable. Simply override $pkgname file.
