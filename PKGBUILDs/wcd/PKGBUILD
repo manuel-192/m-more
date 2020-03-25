@@ -4,7 +4,7 @@
 pkgname=wcd
 pkgdesc="Graphical cd (change directory), like Norton CD in the 1980's."
 pkgver=6.0.3
-pkgrel=2.1
+pkgrel=3
 arch=('any')
 url="https://sourceforge.net/projects/$pkgname"
 license=('GPL')
@@ -50,9 +50,13 @@ package() {
     echo "Error: $pkgname: making executable failed." >&2
     return 1
   fi
-  strip $pkgname.exe
+  pushd man/man1
+  make || { echo "Error: $pkgname: man page generation failed." >&2 ; return 1 ; }
+  popd
+  #strip $pkgname.exe
 
   cd $srcdir
   # remove trailing .exe
   install -vDm755 $srcdir/${pkgname}-${pkgver}/src/$pkgname.exe $pkgdir/usr/bin/$pkgname
+  install -vDm644 $srcdir/${pkgname}-${pkgver}/src/man/man1/$pkgname.1 $pkgdir/usr/local/man/man1/$pkgname.1
 }
