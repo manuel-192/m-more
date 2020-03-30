@@ -6,10 +6,11 @@ pkgdesc="Gnome Hearts card game rescued."
 url="https://github.com/manuel-192/m-m/raw/master/PKGBUILDs/$pkgname"
 
 pkgver=1.1
-pkgrel=1
+pkgrel=2
 arch=(any)
 license=(GPL)
-depends=(gtk-engine-murrine)  # Is this gtk2 stuff really needed?
+depends=( #gtk-engine-murrine   # Is this gtk2 stuff really needed?
+         libglade)
 
 source=($url/$pkgname.zstd)
 sha512sums=('675768b039e2e68c824477b25b8f5d2357cc772a37297f46f350dea6cc825481d1801d36fdcb96114811f320151dc19171cf9371624017a1af26c56d081c0f5c')
